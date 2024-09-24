@@ -1,21 +1,6 @@
 
   
-  .create-button {
-    margin-bottom: 20px;
-    font-size: 16px;
-    padding: 10px 20px;
-    width: 200px;
-    height: 50px;
-    background-color: #BF0000;
-  }
   
-  .background {
-    background-size: cover; /* ให้ภาพขยายเต็มพื้นที่ */
-    background-position: center; /* จัดตำแหน่งให้อยู่กึ่งกลาง */
-    height: 100vh; /* ความสูงของพื้นที่ */
-    width: 100%; /* ความกว้างของพื้นที่ */
-    
-  }
 
   /* โครงสร้างหลักของหน้า */
 .locks-page {
@@ -35,12 +20,22 @@
   flex: 1; /* ให้ส่วนนี้ขยายเต็มที่ได้ */
 }
 
+.create-button {
+  margin-bottom: 20px;
+  margin-right: 40px;
+  font-size: 16px;
+  padding: 10px 0px;
+  width: 200px;
+  height: 50px;
+  background-color: #BF0000;
+}
 
 
 .clear-status-button {
   margin-bottom: 10px;
   width: 200px;
   height: 50px;
+  padding: auto;
 }
 
 

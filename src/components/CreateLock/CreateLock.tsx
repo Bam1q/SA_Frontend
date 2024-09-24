@@ -60,11 +60,12 @@ const createLock = () => {
     
 
     return (
-        <div className="createform">
+        <div className="createlockform">
             <h1></h1>
             <Form onSubmit={handleSubmit}>
                 <label htmlFor="id">ชื่อล็อค</label>
                 <input
+                    className= "create-input"
                     type="text"
                     placeholder="Enter Lock Id"
                     name="id"
@@ -74,6 +75,7 @@ const createLock = () => {
 
                 <label htmlFor="price">สถานะ</label>
                 <input
+                    className= "create-input"       
                     type="text"
                     placeholder="Enter Status"
                     name="status"
@@ -84,6 +86,7 @@ const createLock = () => {
 
                 <label htmlFor="price">ราคา</label>
                 <input
+                    className= "create-input"
                     type="text"
                     placeholder="Enter Price"
                     name="price"
@@ -93,6 +96,7 @@ const createLock = () => {
 
                 <label htmlFor="size">ขนาด</label>
                 <input
+                    className= "create-input"
                     type="text"
                     placeholder="Enter Size"
                     name="size"
@@ -100,8 +104,8 @@ const createLock = () => {
                     required
                 />
 
-                <button className = "reset" type="reset">Reset</button>
-                <button className = "SummitCreate" type="submit">Submit</button>
+                <button className = "buttoncreate" type="reset">Reset</button>
+                <button className = "buttoncreate" type="submit">Submit</button>
             </Form>
         </div>
     );

@@ -8,7 +8,7 @@
     margin: auto;
 }
 
-input {
+.create-input {
     display: block;
     width: 100%;
     padding: 8px;
@@ -17,7 +17,7 @@ input {
     border-radius: 3px;
 }
 
-button {
+.buttoncreate{
     padding: 10px 15px;
     border-radius: 6px;
     margin: 15px;
@@ -31,6 +31,3 @@ button {
 
 
 
-button:hover {
-    background-color: #a00000;
-}

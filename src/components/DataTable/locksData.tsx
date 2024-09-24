@@ -191,6 +191,7 @@ const LocksData: React.FC = () => {
     <div className='lock-data'>
       <div className='filter'>
         <Input
+          
           placeholder="Search by ID or Size"
           prefix={<SearchOutlined />}
           onChange={handleSearch}
