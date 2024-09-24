@@ -44,7 +44,7 @@ const Dashboard: React.FC = () => {
         <Grid item xs={12} sm={4}>
           <Paper elevation={3} className="card">
             <div>
-              <Typography className="card-title">จำนวนผู้ใช้</Typography>
+              <Typography className="card-title">จำนวนบัญชีผู้ใช้</Typography>
               <Typography className="card-value">{dashboardData.totalUsers}</Typography>
             </div>
             <People className="card-icon" />
