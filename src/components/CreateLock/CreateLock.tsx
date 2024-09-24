@@ -73,15 +73,18 @@ const createLock = () => {
                     required
                 />
 
-                <label htmlFor="price">สถานะ</label>
-                <input
-                    className= "create-input"       
-                    type="text"
-                    placeholder="Enter Status"
+                <label htmlFor="status">สถานะ</label>
+                <select
+                    className="create-input"
                     name="status"
+                    value={values.status}
                     onChange={handleChanges}
                     required
-                />
+                >
+                    <option value="ว่าง">ว่าง</option>
+                    <option value="ไม่ว่าง">ไม่ว่าง</option>
+                    <option value="ไม่พร้อมใช้งาน">ไม่พร้อมใช้งาน</option>
+                </select>
 
 
                 <label htmlFor="price">ราคา</label>

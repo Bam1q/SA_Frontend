@@ -3,7 +3,7 @@ import { Lock} from '../../interfaces/ILock'; // นำเข้า interface �
 import { UpdateLocksById } from '../../services/https/lock';
 import { message } from 'antd';
 import axios from 'axios';
-
+import './EditLockStyle.css'
 interface EditLockProps {
   lock: Lock; // รับ prop lock ที่เป็น type Lock
   onUpdate: () => void;
@@ -59,8 +59,9 @@ const EditLock: React.FC<EditLockProps> = ({ lock, onUpdate }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label className="editId" >ID</label>
+      <label  >ID</label>
       <input 
+        className="editLabel"
         name="Id" 
         value={values.Id} 
         disabled 
@@ -68,8 +69,9 @@ const EditLock: React.FC<EditLockProps> = ({ lock, onUpdate }) => {
       />
 
 
-      <label className='editprice'>Price</label>
+      <label >Price</label>
       <input 
+        className="editLabel"
         name="Price" 
         type="number" 
         value={values.Price} 
@@ -77,8 +79,9 @@ const EditLock: React.FC<EditLockProps> = ({ lock, onUpdate }) => {
         required
       />
 
-      <label className='editsize'>Size</label>
+      <label >Size</label>
       <input 
+        className="editLabel"
         name="Size" 
         value={values.Size} 
         onChange={handleChanges} 
@@ -86,12 +89,13 @@ const EditLock: React.FC<EditLockProps> = ({ lock, onUpdate }) => {
       />
 
       <button 
+        className='buttonedit'
         type="button" 
         onClick={() => setValues(lock)} // Reset form to initial values
       >
         Default
       </button>
-      <button type="submit">Save</button>
+      <button className= "buttonedit" type="submit">Save</button>
     </form>
   );
 };
