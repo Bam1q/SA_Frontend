@@ -31,24 +31,31 @@ const createLock = () => {
         try {
             // เรียกใช้ CreateLock API
             const response = await CreateLock(values);
+            console.log(response);  // ตรวจสอบ response ที่ได้จาก API
+    
             if (response?.error) {
-                // ตรวจสอบว่าข้อผิดพลาดเป็นเรื่อง ID มีอยู่แล้วหรือไม่
+                // ถ้ามีข้อผิดพลาดแสดงข้อความ
                 if (response.error === 'ล็อคนี้มีอยู่แล้ว') {
-                    message.error('ID นี้มีอยู่แล้วในระบบ');
+                    message.error('ล็อคนี้มีอยู่แล้วในระบบ');
                 } else {
-                    message.error(response.error || 'ไม่สามารถสร้างล็อคได้');
+                    message.error(response.error);
                 }
             } else {
+                // ถ้าไม่มีข้อผิดพลาด ให้แสดงข้อความว่าล็อคถูกสร้างเรียบร้อยแล้ว
                 message.success('ล็อคถูกสร้างเรียบร้อยแล้ว');
                 setTimeout(() => {
-                    window.location.reload();   
-                }, 500);  // รอ 500 มิลลิวินาทีก่อนโหลดหน้าใหม่
+                    window.location.reload();
+                }, 500);
             }
         } catch (error) {
             console.error('Error creating lock:', error);
             message.error('เกิดข้อผิดพลาดในการสร้างล็อค');
         }
     };
+    
+    
+    
+    
     
     
 

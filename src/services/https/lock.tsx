@@ -78,15 +78,18 @@ async function GetLockById(id: string | undefined) {
 
 
 async function CreateLock(data: LocksInterface) {
-  return await axios
-
-    .post(`${apiUrl}/locks`, data, requestOptions)
-
-    .then((res) => res)
-
-    .catch((e) => e.response);
-    
+  try {
+      const response = await axios.post(`${apiUrl}/locks`, data, requestOptions);
+      return response.data;  // คืนค่าเฉพาะข้อมูลที่สำคัญจาก Response
+  } catch (error) {
+      // ตรวจสอบว่า error มี response หรือไม่ และคืนค่าเป็นข้อมูลที่เข้าใจได้
+      if (axios.isAxiosError(error) && error.response) {
+          return { error: error.response.data.error || 'เกิดข้อผิดพลาดจากเซิร์ฟเวอร์' }; // คืนค่า error จาก API
+      }
+      return { error: 'เกิดข้อผิดพลาดในการเชื่อมต่อ' }; // กรณีอื่น ๆ
+  }
 }
+
 
 async function UpdateLock(data: LocksInterface) {
   if (!data.id) {
